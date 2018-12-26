@@ -1,5 +1,15 @@
+import { LayoutModule } from '@angular/cdk/layout'
 import { NgModule } from '@angular/core'
-import { MatButtonModule, MatIconModule, MatListModule, MatSidenavModule, MatToolbarModule } from '@angular/material'
+import {
+  MatButtonModule,
+  MatCardModule,
+  MatGridListModule,
+  MatIconModule,
+  MatListModule,
+  MatMenuModule,
+  MatSidenavModule,
+  MatToolbarModule,
+} from '@angular/material'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 const modules: ReadonlyArray<any> = [
@@ -9,6 +19,12 @@ const modules: ReadonlyArray<any> = [
   MatListModule,
   MatSidenavModule,
   MatToolbarModule,
+  MatGridListModule,
+  MatCardModule,
+  MatIconModule,
+  MatButtonModule,
+  LayoutModule,
+  MatMenuModule,
 ]
 
 @NgModule({
