@@ -27,7 +27,7 @@ export class PayoutService {
 
     const totals = cards.map(f => ({
       ...f,
-      total: f.purchasedItems.reduce((a: number, c: PurchasedItem) => a + c.price, 0),
+      total: f.purchasedItems.reduce((a: number, c: PurchasedItem) => a + +c.price, 0),
     }))
 
     const totalSpent = totals.reduce((a, c) => a + c.total, 0)

@@ -1,6 +1,40 @@
-<p>calculation-card works! <button (click)="calculate()">Calculate</button></p>
-<ul>
-  <li *ngFor="let payout of payoutSchedules">
-    From: {{ payout.from.name }}, To: {{ payout.to.name }}, Amount: {{ payout.amount }}
-  </li>
-</ul>
+<mat-card class="friend-card">
+  <mat-card-header>
+    <mat-card-title>Calculation</mat-card-title>
+    <mat-card-subtitle *ngIf="!showPayoutSchedule || !hasRunOnce">
+      (Click calculate to process the data)
+    </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <table *ngIf="showPayoutSchedule" mat-table [dataSource]="payoutSchedules">
+      <!-- Position Column -->
+      <ng-container matColumnDef="step">
+        <th mat-header-cell *matHeaderCellDef>Step</th>
+        <td mat-cell *matCellDef="let index = index">{{ index }}</td>
+      </ng-container>
+      <!-- From Column -->
+      <ng-container matColumnDef="from">
+        <th mat-header-cell *matHeaderCellDef>From</th>
+        <td mat-cell *matCellDef="let element">{{ element.from.name }}</td>
+      </ng-container>
+      <!-- To Column -->
+      <ng-container matColumnDef="to">
+        <th mat-header-cell *matHeaderCellDef>To</th>
+        <td mat-cell *matCellDef="let element">{{ element.to.name }}</td>
+      </ng-container>
+      <!-- Amount Column -->
+      <ng-container matColumnDef="amount">
+        <th mat-header-cell *matHeaderCellDef>Amount</th>
+        <td mat-cell *matCellDef="let element">{{ element.amount | currency: '$' }}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+
+    <span *ngIf="!showPayoutSchedule && hasRunOnce">Looks like everyone paid their fair share this time!</span>
+  </mat-card-content>
+  <mat-card-actions>
+    <button color="primary" mat-raised-button (click)="calculate()">Calculate</button>
+  </mat-card-actions>
+</mat-card>

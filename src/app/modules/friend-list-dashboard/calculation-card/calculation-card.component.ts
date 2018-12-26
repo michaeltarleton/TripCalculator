@@ -12,6 +12,9 @@ export class CalculationCardComponent implements OnInit {
   @Input()
   cards: ReadonlyArray<Friend> | undefined
   payoutSchedules: ReadonlyArray<PayoutSchedule> | undefined
+  showPayoutSchedule = false
+  hasRunOnce = false
+  displayedColumns: ReadonlyArray<any> = ['step', 'from', 'to', 'amount']
 
   constructor(private payoutService: PayoutService) {}
 
@@ -19,5 +22,7 @@ export class CalculationCardComponent implements OnInit {
 
   calculate(): void {
     this.payoutSchedules = this.payoutService.calculatePayoutSchedules(this.cards)
+    this.showPayoutSchedule = this.payoutSchedules ? this.payoutSchedules.length > 0 : false
+    this.hasRunOnce = true
   }
 }
