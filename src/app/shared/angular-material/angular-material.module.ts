@@ -10,10 +10,8 @@ import {
   MatSidenavModule,
   MatToolbarModule,
 } from '@angular/material'
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 const modules: ReadonlyArray<any> = [
-  BrowserAnimationsModule,
   MatButtonModule,
   MatIconModule,
   MatListModule,

@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core'
 import { RouterModule, Routes } from '@angular/router'
-import { FriendListDashboardComponent } from './modules/friend-list-dashboard/friend-list-dashboard.component'
 
 const routes: Routes = [
   {
@@ -11,7 +10,7 @@ const routes: Routes = [
 
   {
     path: 'friends',
-    component: FriendListDashboardComponent,
+    loadChildren: './modules/friend-list-dashboard/friend-list-dashboard.module#FriendListDashboardModule',
   },
 ]
 
