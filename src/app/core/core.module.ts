@@ -3,11 +3,11 @@ import {} from '@angular/material'
 
 import { RouterModule } from '@angular/router'
 import { SharedModule } from '../shared/shared.module'
-import { NavbarComponent } from './navbar/navbar.component'
+import { NavbarModule } from './navbar/navbar.module'
 
 @NgModule({
-  imports: [SharedModule, RouterModule],
-  exports: [SharedModule, NavbarComponent],
-  declarations: [NavbarComponent],
+  imports: [SharedModule, RouterModule, NavbarModule],
+  exports: [SharedModule, NavbarModule],
+  declarations: [],
 })
 export class CoreModule {}
