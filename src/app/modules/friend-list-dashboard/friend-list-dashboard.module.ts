@@ -8,7 +8,7 @@ import { PurchasedItemComponent } from './purchased-item/purchased-item.componen
 
 @NgModule({
   imports: [SharedModule, FriendListDashboardRoutingModule],
-  declarations: [FriendListDashboardComponent, FriendComponent, PurchasedItemComponent],
   exports: [FriendListDashboardComponent, FriendComponent, PurchasedItemComponent],
+  declarations: [FriendListDashboardComponent, FriendComponent, PurchasedItemComponent],
 })
 export class FriendListDashboardModule {}
