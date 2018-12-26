@@ -6,5 +6,6 @@ import { FriendListDashboardComponent } from './friend-list-dashboard/friend-lis
 @NgModule({
   imports: [SharedModule],
   declarations: [FriendListDashboardComponent],
+  exports: [FriendListDashboardComponent],
 })
 export class ModulesModule {}
