@@ -1,15 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core'
 
 @Component({
   selector: 'app-friend',
   templateUrl: './friend.component.html',
-  styleUrls: ['./friend.component.css']
+  styleUrls: ['./friend.component.css'],
 })
-export class FriendComponent implements OnInit {
+export class FriendComponent {
+  @Input()
+  card: any
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  constructor() {}
 }
