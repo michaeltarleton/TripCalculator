@@ -3,14 +3,13 @@ import { RouterModule, Routes } from '@angular/router'
 
 const routes: Routes = [
   {
+    path: 'friends',
+    loadChildren: './modules/friend-list-dashboard/friend-list-dashboard.module#FriendListDashboardModule',
+  },
+  {
     path: '',
     pathMatch: 'full',
     redirectTo: 'friends',
-  },
-
-  {
-    path: 'friends',
-    loadChildren: './modules/friend-list-dashboard/friend-list-dashboard.module#FriendListDashboardModule',
   },
 ]
 

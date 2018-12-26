@@ -5,13 +5,12 @@ import { FriendListDashboardComponent } from './friend-list-dashboard.component'
 const routes: Routes = [
   {
     path: '',
-    pathMatch: 'full',
-    redirectTo: '',
+    component: FriendListDashboardComponent,
   },
-
   {
     path: '',
-    component: FriendListDashboardComponent,
+    pathMatch: 'full',
+    redirectTo: '',
   },
 ]
 
