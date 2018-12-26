@@ -1,5 +1,5 @@
-<div class="grid-container" *ngIf="(cards | async) as cards">
+<div class="grid-container" *ngIf="(friends | async) as friends">
   <h1 class="mat-h1">Dashboard</h1>
-  <app-calculation-card [cards]="cards"></app-calculation-card>
-  <app-friend *ngFor="let card of cards" [card]="card"> </app-friend>
+  <app-calculation-card [friends]="friends"></app-calculation-card>
+  <app-friend *ngFor="let friend of friends" [friend]="friend"> </app-friend>
 </div>

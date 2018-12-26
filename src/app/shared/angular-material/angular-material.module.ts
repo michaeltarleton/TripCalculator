@@ -15,14 +15,12 @@ import {
 } from '@angular/material'
 
 const modules: ReadonlyArray<any> = [
-  MatButtonModule,
   MatIconModule,
   MatListModule,
   MatSidenavModule,
   MatToolbarModule,
   MatGridListModule,
   MatCardModule,
-  MatIconModule,
   MatButtonModule,
   LayoutModule,
   MatMenuModule,

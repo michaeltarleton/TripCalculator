@@ -14,22 +14,22 @@ export class FriendService {
   constructor(private http: HttpClient) {}
 
   getAll(): Observable<ReadonlyArray<Friend>> {
-    return this.http.get<ReadonlyArray<Friend>>(`${this._baseUrl}/friends`)
+    return this.http.get<ReadonlyArray<Friend>>(`${this._baseUrl}/friend`)
   }
 
   get(id: string): Observable<Friend> {
-    return this.http.get<Friend>(`${this._baseUrl}/friends/${id}`)
+    return this.http.get<Friend>(`${this._baseUrl}/friend/${id}`)
   }
 
   add(friend: Friend): Observable<string> {
-    return this.http.post<string>(`${this._baseUrl}/friends`, friend)
+    return this.http.post<string>(`${this._baseUrl}/friend`, friend)
   }
 
   update(id: string, friend: Friend): Observable<Friend> {
-    return this.http.put<Friend>(`${this._baseUrl}/friends/${id}`, friend)
+    return this.http.put<Friend>(`${this._baseUrl}/friend/${id}`, friend)
   }
 
   remove(id: string): Observable<string> {
-    return this.http.delete<string>(`${this._baseUrl}/friends/${id}`)
+    return this.http.delete<string>(`${this._baseUrl}/friend/${id}`)
   }
 }

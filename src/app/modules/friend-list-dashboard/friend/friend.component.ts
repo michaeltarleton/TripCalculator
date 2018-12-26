@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core'
 })
 export class FriendComponent {
   @Input()
-  card: any
+  friend: any
 
   constructor() {}
 }

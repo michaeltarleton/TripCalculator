@@ -10,11 +10,11 @@ import { FriendService } from '@app/core/services/friend.service'
   styleUrls: ['./friend-list-dashboard.component.css'],
 })
 export class FriendListDashboardComponent implements OnInit {
-  cards: Observable<ReadonlyArray<Friend>> | undefined
+  friends: Observable<ReadonlyArray<Friend>> | undefined
 
   constructor(private friendService: FriendService) {}
 
   ngOnInit(): void {
-    this.cards = this.friendService.getAll()
+    this.friends = this.friendService.getAll()
   }
 }

@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core'
-import { MatTableDataSource } from '@angular/material'
+
+import { PurchasedItem } from '@app/core/services/purchased-item.interface'
+import { PurchasedItemService } from '@app/core/services/purchased-item.service'
 
 @Component({
   selector: 'app-purchased-item',
@@ -8,18 +10,37 @@ import { MatTableDataSource } from '@angular/material'
 })
 export class PurchasedItemComponent implements OnInit {
   @Input()
-  purchasedItems: ReadonlyArray<any> = []
+  purchasedItems: ReadonlyArray<PurchasedItem> = []
+  @Input()
+  friendId: string | undefined
 
   displayedColumns: ReadonlyArray<string> = ['name', 'price', 'actions']
-  dataSource: MatTableDataSource<ReadonlyArray<any>> | undefined
 
-  constructor() {}
+  constructor(private purchasedItemService: PurchasedItemService) {}
 
-  ngOnInit() {
-    this.dataSource = new MatTableDataSource([...this.purchasedItems])
-  }
+  ngOnInit(): void {}
 
   getTotalCost(): number {
     return this.purchasedItems.map(t => t.price).reduce((acc, value) => acc + value, 0)
+  }
+
+  remove(id: string): void {
+    // tslint:disable-next-line:no-if-statement
+    if (!this.friendId) {
+      return
+    }
+    this.purchasedItemService
+      .remove(this.friendId, id)
+      .subscribe(() => (this.purchasedItems = this.purchasedItems.filter(f => f.id !== id)))
+  }
+
+  update(purchasedItem: PurchasedItem): void {
+    // tslint:disable-next-line:no-if-statement
+    if (!this.friendId) {
+      return
+    }
+    this.purchasedItemService
+      .update(this.friendId, purchasedItem.id, purchasedItem)
+      .subscribe(() => (this.purchasedItems = this.purchasedItems.filter(f => f.id !== purchasedItem.id)))
   }
 }

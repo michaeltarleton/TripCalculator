@@ -10,7 +10,8 @@ import { PayoutSchedule, PayoutService } from '../payout.service'
 })
 export class CalculationCardComponent implements OnInit {
   @Input()
-  cards: ReadonlyArray<Friend> | undefined
+  friends: ReadonlyArray<Friend> | undefined
+
   payoutSchedules: ReadonlyArray<PayoutSchedule> | undefined
   showPayoutSchedule = false
   hasRunOnce = false
@@ -21,7 +22,7 @@ export class CalculationCardComponent implements OnInit {
   ngOnInit() {}
 
   calculate(): void {
-    this.payoutSchedules = this.payoutService.calculatePayoutSchedules(this.cards)
+    this.payoutSchedules = this.payoutService.calculatePayoutSchedules(this.friends)
     this.showPayoutSchedule = this.payoutSchedules ? this.payoutSchedules.length > 0 : false
     this.hasRunOnce = true
   }
