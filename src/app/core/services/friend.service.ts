@@ -8,7 +8,7 @@ import { Friend } from './friend.interface'
 @Injectable({
   providedIn: 'root',
 })
-export class FriendServiceService {
+export class FriendService {
   private readonly _baseUrl = environment.api
 
   constructor(private http: HttpClient) {}
