@@ -8,6 +8,7 @@ import {
   MatListModule,
   MatMenuModule,
   MatSidenavModule,
+  MatTableModule,
   MatToolbarModule,
 } from '@angular/material'
 
@@ -23,6 +24,7 @@ const modules: ReadonlyArray<any> = [
   MatButtonModule,
   LayoutModule,
   MatMenuModule,
+  MatTableModule,
 ]
 
 @NgModule({

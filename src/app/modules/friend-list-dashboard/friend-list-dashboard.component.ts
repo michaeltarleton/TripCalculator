@@ -12,7 +12,7 @@ export class FriendListDashboardComponent implements OnInit {
   cards: Observable<ReadonlyArray<Friend>> | undefined
 
   private values: ReadonlyArray<Friend> = [
-    { name: 'Sam', purchasedItems: [{ name: 'Snickers', price: 10.99 }] },
+    { name: 'Sam', purchasedItems: [{ name: 'Snickers', price: 10.9999 }] },
     { name: 'Sam', purchasedItems: [{ name: 'Snickers', price: 10.99 }] },
     { name: 'Sam', purchasedItems: [{ name: 'Snickers', price: 10.99 }] },
     { name: 'Sam', purchasedItems: [{ name: 'Snickers', price: 10.99 }] },
