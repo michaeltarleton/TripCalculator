@@ -23,7 +23,9 @@ export class PurchasedItemService {
   }
 
   add(friendId: string, purchasedItem: PurchasedItem): Observable<string> {
-    return this.http.post<string>(`${this._baseUrl}/${friendId}/purchased`, purchasedItem).pipe(take(1))
+    return this.http
+      .post(`${this._baseUrl}/${friendId}/purchased`, purchasedItem, { responseType: 'text' })
+      .pipe(take(1))
   }
 
   update(friendId: string, purchasedItemId: string, purchasedItem: PurchasedItem): Observable<PurchasedItem> {
@@ -33,6 +35,8 @@ export class PurchasedItemService {
   }
 
   remove(friendId: string, purchasedItemId: string): Observable<string> {
-    return this.http.delete<string>(`${this._baseUrl}/${friendId}/purchased/${purchasedItemId}`).pipe(take(1))
+    return this.http
+      .delete(`${this._baseUrl}/${friendId}/purchased/${purchasedItemId}`, { responseType: 'text' })
+      .pipe(take(1))
   }
 }

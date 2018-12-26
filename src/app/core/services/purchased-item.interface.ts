@@ -1,5 +1,5 @@
 export interface PurchasedItem {
-  id: string
+  id?: string
   name: string
   price: number
 }

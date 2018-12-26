@@ -21,7 +21,7 @@ export class PurchasedItemComponent implements OnInit {
   ngOnInit(): void {}
 
   getTotalCost(): number {
-    return this.purchasedItems.map(t => t.price).reduce((acc, value) => acc + value, 0)
+    return this.purchasedItems.map(t => t.price).reduce((acc, value) => acc + +value, 0)
   }
 
   remove(id: string): void {
@@ -36,11 +36,16 @@ export class PurchasedItemComponent implements OnInit {
 
   update(purchasedItem: PurchasedItem): void {
     // tslint:disable-next-line:no-if-statement
-    if (!this.friendId) {
+    if (!this.friendId || !purchasedItem.id) {
       return
     }
     this.purchasedItemService
       .update(this.friendId, purchasedItem.id, purchasedItem)
-      .subscribe(() => (this.purchasedItems = this.purchasedItems.filter(f => f.id !== purchasedItem.id)))
+      .subscribe(
+        () =>
+          (this.purchasedItems = this.purchasedItems.map(f =>
+            f.id === purchasedItem.id ? { ...f, ...purchasedItem } : f
+          ))
+      )
   }
 }

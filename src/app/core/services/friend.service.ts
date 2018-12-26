@@ -22,7 +22,7 @@ export class FriendService {
   }
 
   add(friend: Friend): Observable<string> {
-    return this.http.post<string>(`${this._baseUrl}/friend`, friend)
+    return this.http.post(`${this._baseUrl}/friend`, friend, { responseType: 'text' })
   }
 
   update(id: string, friend: Friend): Observable<Friend> {
@@ -30,6 +30,6 @@ export class FriendService {
   }
 
   remove(id: string): Observable<string> {
-    return this.http.delete<string>(`${this._baseUrl}/friend/${id}`)
+    return this.http.delete(`${this._baseUrl}/friend/${id}`, { responseType: 'text' })
   }
 }
