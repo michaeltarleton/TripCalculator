@@ -1,34 +1,27 @@
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout'
-import { Component } from '@angular/core'
-import { map } from 'rxjs/operators'
+import { Component, OnInit } from '@angular/core'
+import { Observable, of } from 'rxjs'
+
+import { Friend } from '@app/core/services/friend.interface'
 
 @Component({
   selector: 'app-friend-list-dashboard',
   templateUrl: './friend-list-dashboard.component.html',
   styleUrls: ['./friend-list-dashboard.component.css'],
 })
-export class FriendListDashboardComponent {
-  /** Based on the screen size, switch from standard to one column per row */
-  cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
-    map(({ matches }) => {
-      // tslint:disable-next-line:no-if-statement
-      if (matches) {
-        return [
-          { title: 'Card 1', cols: 1, rows: 1 },
-          { title: 'Card 2', cols: 1, rows: 1 },
-          { title: 'Card 3', cols: 1, rows: 1 },
-          { title: 'Card 4', cols: 1, rows: 1 },
-        ]
-      }
+export class FriendListDashboardComponent implements OnInit {
+  cards: Observable<ReadonlyArray<Friend>> | undefined
 
-      return [
-        { title: 'Card 1', cols: 2, rows: 1 },
-        { title: 'Card 2', cols: 1, rows: 1 },
-        { title: 'Card 3', cols: 1, rows: 2 },
-        { title: 'Card 4', cols: 1, rows: 1 },
-      ]
-    })
-  )
+  private values: ReadonlyArray<Friend> = [
+    { name: 'Sam', purchasedItems: [{ name: 'Snickers', price: 10.99 }] },
+    { name: 'Sam', purchasedItems: [{ name: 'Snickers', price: 10.99 }] },
+    { name: 'Sam', purchasedItems: [{ name: 'Snickers', price: 10.99 }] },
+    { name: 'Sam', purchasedItems: [{ name: 'Snickers', price: 10.99 }] },
+    { name: 'Sam', purchasedItems: [{ name: 'Snickers', price: 10.99 }] },
+  ]
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  constructor() {}
+
+  ngOnInit(): void {
+    this.cards = of(this.values)
+  }
 }
