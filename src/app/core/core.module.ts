@@ -1,12 +1,11 @@
 import { NgModule } from '@angular/core'
+import {} from '@angular/material'
 
-import { SharedModule } from '../shared/shared.module';
-import { NavbarComponent } from './navbar/navbar.component';
-import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material'
+import { SharedModule } from '../shared/shared.module'
+import { NavbarComponent } from './navbar/navbar.component'
 
 @NgModule({
-  imports: [SharedModule, LayoutModule, MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule],
+  imports: [SharedModule],
   exports: [SharedModule],
   declarations: [NavbarComponent],
 })
