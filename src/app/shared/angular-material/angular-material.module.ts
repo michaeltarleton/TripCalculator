@@ -3,8 +3,10 @@ import { NgModule } from '@angular/core'
 import {
   MatButtonModule,
   MatCardModule,
+  MatFormFieldModule,
   MatGridListModule,
   MatIconModule,
+  MatInputModule,
   MatListModule,
   MatMenuModule,
   MatSidenavModule,
@@ -25,6 +27,8 @@ const modules: ReadonlyArray<any> = [
   LayoutModule,
   MatMenuModule,
   MatTableModule,
+  MatFormFieldModule,
+  MatInputModule,
 ]
 
 @NgModule({

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core'
+import { MatTableDataSource } from '@angular/material'
 
 @Component({
   selector: 'app-purchased-item',
@@ -10,10 +11,13 @@ export class PurchasedItemComponent implements OnInit {
   purchasedItems: ReadonlyArray<any> = []
 
   displayedColumns: ReadonlyArray<string> = ['name', 'price']
+  dataSource: MatTableDataSource<ReadonlyArray<any>> | undefined
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.dataSource = new MatTableDataSource([...this.purchasedItems])
+  }
 
   getTotalCost(): number {
     return this.purchasedItems.map(t => t.price).reduce((acc, value) => acc + value, 0)
