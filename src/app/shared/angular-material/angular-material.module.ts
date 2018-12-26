@@ -1,10 +1,9 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core'
+
+const modules: ReadonlyArray<any> = []
 
 @NgModule({
-  imports: [
-    CommonModule
-  ],
-  declarations: []
+  imports: [...modules],
+  exports: [...modules],
 })
-export class AngularMaterialModule { }
+export class AngularMaterialModule {}
