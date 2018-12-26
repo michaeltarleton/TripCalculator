@@ -1,3 +1,6 @@
-<p>
-  calculation-card works!
-</p>
+<p>calculation-card works! <button (click)="calculate()">Calculate</button></p>
+<ul>
+  <li *ngFor="let payout of payoutSchedules">
+    From: {{ payout.from.name }}, To: {{ payout.to.name }}, Amount: {{ payout.amount }}
+  </li>
+</ul>
