@@ -10,7 +10,7 @@ export class PurchasedItemComponent implements OnInit {
   @Input()
   purchasedItems: ReadonlyArray<any> = []
 
-  displayedColumns: ReadonlyArray<string> = ['name', 'price']
+  displayedColumns: ReadonlyArray<string> = ['name', 'price', 'actions']
   dataSource: MatTableDataSource<ReadonlyArray<any>> | undefined
 
   constructor() {}
