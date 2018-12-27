@@ -3,11 +3,11 @@
 ## Getting Started
 
 1. Run `docker-compose up` _(...grab some coffee...)_
-2. Navigate to `http://localhost:8080`
+2. Navigate to [http://localhost:8080](http://localhost:8080)
 
 ### Documentation
 
-- Access Swagger at `http://localhost:8081/swagger`
+- Access Swagger at [http://localhost:8081/swagger](http://localhost:8081/swagger)
 
 ## Beware
 
