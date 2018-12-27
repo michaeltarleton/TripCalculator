@@ -11,7 +11,7 @@ services:
       - frontend
 
   trip-calculator-service:
-    build: ../TripCalculatorService
+    build: https://github.com/michaeltarleton/TripCalculatorService.git
     image: michaeltarleton/trip-calculator-service
     ports:
       - 8081:80
