@@ -2,6 +2,7 @@
 
 ## Getting Started
 
+1. Install [Docker](https://docs.docker.com) ([mac](https://docs.docker.com/docker-for-mac/install/))
 1. Run `docker-compose up` _(...grab some coffee...)_
 2. Navigate to [http://localhost:8080](http://localhost:8080)
 
