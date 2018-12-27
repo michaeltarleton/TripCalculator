@@ -1,5 +1,7 @@
 # TripCalculator
 
+![sample](documentation/images/demo.png)
+
 ## Getting Started
 
 1. Install [Docker](https://docs.docker.com) ([mac](https://docs.docker.com/docker-for-mac/install/))
