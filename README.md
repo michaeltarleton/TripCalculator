@@ -20,6 +20,6 @@
 
 ## Todos
 
-[] Add unit tests  
-[] Change the ChangeDetectionStrategy to OnPush for the components that only rely on @Input() variables  
-[] Change the "check" icon color when table row fields have been dirtied  
+- [ ] Add unit tests  
+- [ ] Change the ChangeDetectionStrategy to OnPush for the components that only rely on @Input() variables  
+- [ ] Change the "check" icon color when table row fields have been dirtied  
