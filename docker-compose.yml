@@ -1,13 +1,37 @@
 version: '3'
 services:
   trip-calculator-ui:
-    build:
-      context: .
-      image: michaeltarleton/trip-calculator-ui
+    build: .
+    image: michaeltarleton/trip-calculator-ui
     ports:
       - 8080:8080
+    depends_on:
+      - trip-calculator-service
+    networks:
+      - frontend
+
+  trip-calculator-service:
+    build: ../TripCalculatorService
+    image: michaeltarleton/trip-calculator-service
+    ports:
+      - 8081:80
+    depends_on:
+      - elaticsearch
+    networks:
+      - frontend
+      - backend
+
+  elaticsearch:
+    image: elasticsearch:5-alpine
+    environment:
+      discovery.type: single-node
+    ports:
+      - 9200
     networks:
       - backend
 
 networks:
   backend:
+    driver: bridge
+  frontend:
+    driver: bridge
