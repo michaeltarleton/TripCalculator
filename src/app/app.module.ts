@@ -10,7 +10,7 @@ import { ModulesModule } from './modules/modules.module'
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule, CoreModule, HttpClientModule, ModulesModule],
+  imports: [BrowserModule, BrowserAnimationsModule, ModulesModule, CoreModule, AppRoutingModule, HttpClientModule],
   providers: [HttpClient],
   bootstrap: [AppComponent],
 })
