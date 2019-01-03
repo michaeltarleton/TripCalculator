@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core'
 
 import { Friend } from '@app/core/services/friend.interface'
 import { PurchasedItem } from '@app/core/services/purchased-item.interface'
-import { FriendListDashboardModule } from './friend-list-dashboard.module'
 
 export interface PayoutSchedule {
   from: Friend
@@ -11,9 +10,7 @@ export interface PayoutSchedule {
   remaining: number
 }
 
-@Injectable({
-  providedIn: FriendListDashboardModule,
-})
+@Injectable()
 export class PayoutService {
   constructor() {}
 

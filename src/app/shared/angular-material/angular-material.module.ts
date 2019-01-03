@@ -9,6 +9,7 @@ import {
   MatInputModule,
   MatListModule,
   MatMenuModule,
+  MatProgressSpinnerModule,
   MatSidenavModule,
   MatTableModule,
   MatToolbarModule,
@@ -27,6 +28,7 @@ const modules: ReadonlyArray<any> = [
   MatTableModule,
   MatFormFieldModule,
   MatInputModule,
+  MatProgressSpinnerModule,
 ]
 
 @NgModule({

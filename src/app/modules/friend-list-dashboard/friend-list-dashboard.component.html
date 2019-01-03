@@ -1,5 +1,9 @@
-<div class="grid-container" *ngIf="(friends | async) as friends">
+<div class="grid-container" *ngIf="(friends | async) as friends; else loading">
   <h1 class="mat-h1">Dashboard</h1>
   <app-calculation-card [friends]="friends"></app-calculation-card>
   <app-friend *ngFor="let friend of friends" [friend]="friend"> </app-friend>
 </div>
+<ng-template #loading>
+  <div class="loading-text">Please give it about sixty seconds while Elasticsearch starts up!</div>
+  <div class="loading-indicator"><mat-progress-spinner color="accent" mode="indeterminate"> </mat-progress-spinner></div
+></ng-template>
